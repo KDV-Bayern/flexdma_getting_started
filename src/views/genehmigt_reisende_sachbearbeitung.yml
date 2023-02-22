@@ -1,0 +1,35 @@
+view_for: "tutorial_reiseantrag" # Bezieht sich auf schema_uniquename
+title: "Genehmigte Reiseantrag sichten"
+state: genehmigt 
+roles_allowed: 
+- role: reisende
+  restricted_by: "username == owner_username"
+- role: sachbearbeitung
+transitions:
+- name: "to_abrechnung_beantragen"
+  label: "Antrag abrechnen"
+  state: "abrechnen_beantragen"
+tabs:
+- name: "Allgemein"
+  panels:
+    - name: "Stammdaten"
+      visible_attributes:
+      - nachname
+      - vorname
+    - name: "Reisedaten"
+      visible_attributes:
+      - reisetyp
+      - zielort
+      - beginn
+      - ende
+    - name: "Kommentare"
+      visible_attributes:
+      - genehmigungskommentar
+readonly_fields:
+- vorname
+- nachname
+- reisetyp
+- zielort
+- beginn
+- ende
+- genehmigungskommentar

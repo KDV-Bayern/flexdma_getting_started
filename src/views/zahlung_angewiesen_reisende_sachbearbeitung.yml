@@ -1,0 +1,35 @@
+view_for: "tutorial_reiseantrag" # Bezieht sich auf schema_uniquename
+title: "Erstattete Reise sichten"
+state: zahlung_angewiesen 
+roles_allowed: 
+- role: sachbearbeitung
+- role: reisende
+  restricted_by: "username == owner_username"
+tabs:
+- name: "Allgemein"
+  panels:
+    - name: "Stammdaten"
+      visible_attributes:
+      - nachname
+      - vorname
+    - name: "Kommentare"
+      visible_attributes:
+      - genehmigungskommentar
+- name: "Abrechnung"
+  panels: 
+    - name: "Abrechnungsdaten"
+      visible_attributes:
+      - reisetyp
+      - zielort
+      - beginn
+      - ende
+      - uebernachtungen
+readonly_fields:
+- vorname
+- nachname
+- genehmigungskommentar
+- reisetyp
+- zielort
+- beginn
+- ende
+- uebernachtungen

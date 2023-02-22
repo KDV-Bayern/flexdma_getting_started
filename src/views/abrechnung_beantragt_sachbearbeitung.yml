@@ -1,0 +1,40 @@
+view_for: "tutorial_reiseantrag" # Bezieht sich auf schema_uniquename
+title: "Reise abrechnen"
+state: abrechnung_beantragt 
+roles_allowed: 
+- role: sachbearbeitung
+transitions:
+- name: "to_zahlung_angewiesen"
+  label: "Zahlung anweisen"
+  state: "zahlung_angewiesen"
+- name: "to_zahlung_abgelehnt"
+  label: "Zahlung ablehnen"
+  state: "zahlung_abgelehnt"
+tabs:
+- name: "Allgemein"
+  panels:
+    - name: "Stammdaten"
+      visible_attributes:
+      - nachname
+      - vorname
+    - name: "Kommentare"
+      visible_attributes:
+      - genehmigungskommentar
+- name: "Abrechnung"
+  panels: 
+    - name: "Abrechnungsdaten"
+      visible_attributes:
+      - reisetyp
+      - zielort
+      - beginn
+      - ende
+      - uebernachtungen
+readonly_fields:
+- vorname
+- nachname
+- genehmigungskommentar
+- reisetyp
+- zielort
+- beginn
+- ende
+- uebernachtungen

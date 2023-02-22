@@ -1,0 +1,30 @@
+view_for: "tutorial_reiseantrag" # Bezieht sich auf schema_uniquename
+title: "Reiseantrag in Prüfung sichten"
+state: beantragt 
+roles_allowed: 
+- role: reisende
+  restricted_by: "username == owner_username"
+tabs:
+- name: "Allgemein"
+  panels:
+    - name: "Stammdaten"
+      visible_attributes:
+      - nachname
+      - vorname
+    - name: "Reisedaten"
+      visible_attributes:
+      - reisetyp
+      - zielort
+      - beginn
+      - ende
+    - name: "Kommentare"
+      visible_attributes:
+      - genehmigungskommentar
+readonly_fields:
+- vorname
+- nachname
+- reisetyp
+- zielort
+- beginn
+- ende
+- genehmigungskommentar

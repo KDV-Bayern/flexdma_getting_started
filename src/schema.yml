@@ -1,0 +1,61 @@
+schema_uniquename: tutorial_reiseantrag
+schema_title: Beispiel Reiseantrag
+initial_status: initial
+types:
+  hotel:
+    attributes:
+    - attribute_name: name
+      label: Name
+      type: string
+      control: textbox
+    - attribute_name: kosten
+      label: "Kosten"
+      type: string
+      regex: "^[0-9]+(,[0-9]+)?$"
+      control: textbox    
+  reisetyp:
+    attributes:
+    - attribute_name: typ
+      label: Reisetyp
+      type: string
+      control: textbox
+    loader:
+      type: python
+      code_location: "tutorial_reiseantrag/loaders/reisetyp.py"
+attributes:
+- attribute_name: reisetyp
+  label: "Typ der Reise"
+  type: reisetyp
+  control: select
+  required: true
+- attribute_name: vorname
+  label: Vorname
+  type: string
+  control: textbox
+  required: true
+- attribute_name: nachname
+  label: Nachname
+  type: string
+  control: textbox
+  required: true
+- attribute_name: zielort
+  label: Zielort
+  type: string
+  control: textbox
+- attribute_name: beginn
+  label: Reisebeginn
+  type: date
+  control: datepicker
+- attribute_name: ende
+  label: Reiseende
+  type: date
+  control: datepicker
+- attribute_name: uebernachtungen
+  label: "Übernachtungen"
+  type: hotel
+  cardinality: many
+  control: tableedit
+- attribute_name: genehmigungskommentar
+  label: "Kommentar der/des Vorgesetzten"
+  type: string
+  control: textarea

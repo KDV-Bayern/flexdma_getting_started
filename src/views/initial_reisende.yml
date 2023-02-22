@@ -1,0 +1,26 @@
+view_for: "tutorial_reiseantrag" # Bezieht sich auf schema_uniquename
+title: "Reiseantrag anlegen"
+state: initial 
+roles_allowed: 
+- role: reisende
+  restricted_by: "username == owner_username"
+transitions: 
+- name: "to_beantragt"
+  label: "Antrag stellen"
+  state: "beantragt"
+- name: "to_initial"
+  label: "Zwischenspeichern"
+  state: "initial"
+tabs:
+- name: "Allgemein"
+  panels:
+    - name: "Stammdaten"
+      visible_attributes:
+      - nachname
+      - vorname
+    - name: "Reisedaten"
+      visible_attributes:
+      - reisetyp
+      - zielort
+      - beginn
+      - ende

@@ -1,0 +1,38 @@
+view_for: "tutorial_reiseantrag" # Bezieht sich auf schema_uniquename
+title: "Reiseantrag prüfen"
+state: beantragt 
+roles_allowed: 
+- role: vorgesetzte
+transitions: 
+- name: "to_initial"
+  label: "Antrag ablehnen"
+  state: "initial"
+  post_transition:
+    code_location: "tutorial_reiseantrag/transitions/send_email.py"
+- name: "to_genehmigt"
+  label: "Antrag genehmigen"
+  state: "genehmigt"
+  post_transition:
+    code_location: "tutorial_reiseantrag/transitions/send_email.py"
+tabs:
+- name: "Allgemein"
+  panels:
+    - name: "Stammdaten"
+      visible_attributes:
+      - nachname
+      - vorname
+    - name: "Reisedaten"
+      visible_attributes:
+      - reisetyp
+      - zielort
+      - beginn
+      - ende
+    - name: "Kommentare"
+      visible_attributes:
+      - genehmigungskommentar
+readonly_fields:
+- vorname
+- nachname
+- zielort
+- beginn
+- ende

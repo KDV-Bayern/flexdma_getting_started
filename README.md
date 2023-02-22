@@ -65,7 +65,7 @@ attributes:
 - attribute_name: zielort
   label: Zielort
   type: string
-  control: textbox
+  control: textbox  
 - attribute_name: beginn
   label: Reisebeginn
   type: date
@@ -218,3 +218,7 @@ Das von FlexDMA automatisch generierte Diagramm zum abgebildeten Prozess sieht w
 Ein Durchlauf durch den daraus resultierenden Prozess wird im folgenden Video gezeigt.
 
 ![](img/Bildschirmaufzeichnung.webm)
+
+Den vollständigen Code der Views finden Sie unter [src/views](src/views/) in diesem Repository.
+
+Dieses Tutorial zeigt nur einen Ausschnitt aus den verfügbaren Funktionen der aktuellen Version von FlexDMA.

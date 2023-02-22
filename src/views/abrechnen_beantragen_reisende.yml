@@ -1,0 +1,33 @@
+view_for: "tutorial_reiseantrag" # Bezieht sich auf schema_uniquename
+title: "Reise abrechnen"
+state: abrechnen_beantragen 
+roles_allowed: 
+- role: reisende
+  restricted_by: "username == owner_username"
+transitions:
+- name: "to_abrechnung_beantragt"
+  label: "Antrag absenden"
+  state: "abrechnung_beantragt"
+tabs:
+- name: "Allgemein"
+  panels:
+    - name: "Stammdaten"
+      visible_attributes:
+      - nachname
+      - vorname
+    - name: "Kommentare"
+      visible_attributes:
+      - genehmigungskommentar
+- name: "Abrechnung"
+  panels: 
+    - name: "Abrechnungsdaten"
+      visible_attributes:
+      - reisetyp
+      - zielort
+      - beginn
+      - ende
+      - uebernachtungen
+readonly_fields:
+- vorname
+- nachname
+- genehmigungskommentar

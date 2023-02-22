@@ -215,9 +215,9 @@ Das von FlexDMA automatisch generierte Diagramm zum abgebildeten Prozess sieht w
 
 ![](img/prozessdiagramm_flexdma_generated.png)
 
-Ein Durchlauf durch den daraus resultierenden Prozess wird im folgenden Video gezeigt.
+Ein Durchlauf durch den daraus resultierenden Prozess wird im folgenden [Video](https://github.com/KDV-Bayern/flexdma_getting_started/raw/master/img/Bildschirmaufzeichnung.webm) gezeigt.
 
-![](https://github.com/KDV-Bayern/flexdma_getting_started/raw/master/img/Bildschirmaufzeichnung.webm)
+https://github.com/KDV-Bayern/flexdma_getting_started/raw/master/img/Bildschirmaufzeichnung.webm
 
 Den vollständigen Code der Views finden Sie unter [src/views](src/views/) in diesem Repository.
 
